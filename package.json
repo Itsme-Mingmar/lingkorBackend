@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "seed:admin": "ts-node src/seeders/seeder.admin.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -21,16 +24,29 @@
   "packageManager": "pnpm@11.23.0",
   "type": "commonjs",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "class-validator": "^0.15.1",
+    "cloudinary": "^2.11.0",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.3.0",
+    "multer-storage-cloudinary": "^4.0.0",
     "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^1.1.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.2.0",
     "@types/node": "^26.4.0",
+    "jest": "^30.5.1",
+    "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "5.9.3"

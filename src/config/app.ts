@@ -1,10 +1,11 @@
 import express from 'express';
-
-
+import router from '../route/index.route';
+import cookieParser from 'cookie-parser';
 const app = express()
 
-app.use(express.json())
-
+app.use(express.json());
+app.use(cookieParser());
+app.use(router);
 
 app.get("/api/v1/lingkor", (_req, res)=>{
    res.status(200).json({
@@ -13,7 +14,5 @@ app.get("/api/v1/lingkor", (_req, res)=>{
     environment: process.env.NODE_ENV || "development"
    })
 })
-
-
 
 export default app
