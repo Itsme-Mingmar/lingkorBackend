@@ -1,4 +1,4 @@
-import { BaseEntity, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, BaseEntity, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export abstract class Base extends BaseEntity {
     @PrimaryGeneratedColumn("uuid")
@@ -10,6 +10,7 @@ export abstract class Base extends BaseEntity {
     @UpdateDateColumn({name: "updated_at"})
     updatedAt: Date;
 
-  isDeleted: boolean;
+    @Column({ name: "is_deleted", default: false })
+    isDeleted: boolean;
 
 }
