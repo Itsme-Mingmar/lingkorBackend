@@ -17,10 +17,6 @@ export class CreateEnquiryDto {
   @IsNotEmpty()
   email: string;
 
-  @IsString()
-  @IsOptional()
-  phone?: string;
-
   @IsDateString()
   @IsNotEmpty()
   date: string;
